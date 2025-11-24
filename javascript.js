@@ -57,9 +57,14 @@ function removeGrid ()
 // change square color on mouse hover
 function colorSquare (e)
 {
-    e.target.classList.add("filled");
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+
+    e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 }
 
+// resize the grid
 function resizeGrid ()
 {
     let size = parseInt(prompt("Enter grid size(1-100): "));
@@ -71,7 +76,7 @@ function resizeGrid ()
 
     else if (size<1 || size>100)
     {
-        alert("The number's too long!");
+        alert("The size's out of bound!");
     }
 
     else
@@ -81,6 +86,7 @@ function resizeGrid ()
     }
 }
 
+// clear grid (color)
 function clearGrid ()
 {
     let squares = Array.from(document.querySelectorAll(".square"));
