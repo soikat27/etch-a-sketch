@@ -57,11 +57,24 @@ function removeGrid ()
 // change square color on mouse hover
 function colorSquare (e)
 {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
+    if (!e.target.style.backgroundColor)
+    {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
 
-    e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        e.target.style.opacity = "0.1";
+    }
+
+    else
+    {
+        let curOpacity = parseFloat(getComputedStyle(e.target).opacity);
+        let newOpacity = curOpacity + 0.1;
+        if (newOpacity > 1) newOpacity = 1;
+        
+        e.target.style.opacity = `${newOpacity}`;
+    }  
 }
 
 // resize the grid
@@ -92,7 +105,7 @@ function clearGrid ()
     let squares = Array.from(document.querySelectorAll(".square"));
 
     squares.forEach(square => {
-        square.classList.remove("filled");
+        square.style.backgroundColor = "";
     });
 }
 
