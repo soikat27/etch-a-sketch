@@ -1,0 +1,45 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.header {
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: burlywood;
+    color: whitesmoke;
+    border-radius: 5px;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.grid {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filled {
+    background-color: cadetblue;
+}
+
