@@ -72,7 +72,7 @@ function colorSquare (e)
         let curOpacity = parseFloat(getComputedStyle(e.target).opacity);
         let newOpacity = curOpacity + 0.1;
         if (newOpacity > 1) newOpacity = 1;
-        
+
         e.target.style.opacity = `${newOpacity}`;
     }  
 }
@@ -106,6 +106,7 @@ function clearGrid ()
 
     squares.forEach(square => {
         square.style.backgroundColor = "";
+        square.style.opacity = "";
     });
 }
 
